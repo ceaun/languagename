@@ -1,0 +1,141 @@
+# GO Programming Language
+
+## Short description
+
+_Go is a statically typed, compiled programming language designed at Google[11] by Robert Griesemer, Rob Pike, and Ken Thompson.[12] It is syntactically similar to C, but with memory safety, garbage collection, structural typing,[6] and CSP-style concurrency.[13] It is often referred to as Golang because of its former domain name, golang.org, but its proper name is Go._
+
+### How to install Go on Mac OS 
+
+** Go to [https://go.dev/doc/install]
+** Click on Download Go for Mac
+** Open the package file you downloaded and follow the prompts to install Go
+** The package installs the Go distribution to /usr/local/go. The package should put the /usr/local/go/bin directory in your PATH environment variable. You may need to restart any open Terminal sessions for the change to take effect.
+** Verify that you've installed Go by opening a command prompt and typing the following command: $ go version
+** Confirm that the command prints the installed version of Go.
+
+#### How to run "Hello World" in GO
+
+_The full source code:_
+
+`package main`
+
+
+`import "fmt"`
+`func main() {`
+    `fmt.Println("hello world")`
+`}`
+
+    
+_To run the program, put the code in hello-world.go and use go run._
+
+`$ go run hello-world.go`
+
+_Sometimes we’ll want to build our programs into binaries. We can do this using go build._
+
+`$ go build hello-world.go`
+
+_We can then execute the built binary directly._
+
+
+#### How to define a structure in Go
+
+`type Book struct {`
+        `isbn    string`
+	`title	  string`
+	`price    float`
+`}`
+
+#### How to initialize a structure in Go
+
+`book := Book{"123456789", "Art of Programming", 456.78}`
+
+or
+
+`book := Book{price: 456.78, isbn: "123456789", title: "Art of Programming"}`
+
+#### Structure Pointers in Go and Golang
+
+`type Product struct {`
+	`name	string`
+	`unitPrice float32`
+	`quantity int`
+`}`
+
+`pl := Product{"T107", 56.78, 12}`
+
+`ptr2pl := &pl`
+`(*ptr2pl).name = "T203"`
+`(*ptr2pl).quantity = 20`
+`(ptr2pl).unitPrice = 5.67`
+
+`fmt.Printf("%+v\n", ptr2pl)`
+
+#### Nested Structures in Go and Golang
+
+`package main`
+
+`import "fmt"`
+
+`type Book struct {`
+	`isbn	string`
+	`title	string`
+	`edition    int`
+	`price	float32`
+	`authors    []Author`
+	`publisher Publisher`
+`}`
+
+`type Author struct {`
+	`id	int`
+	`firstName string`
+	`lastName string`
+`}`
+
+`type Publisher struct {`
+	`name string`
+	`email string`
+`}`
+
+`func main() {`
+
+`bl := Book{"978-0-262-03384-8", "introduction to Algorithms", 3, 233.56,`
+		`[]Author{`
+			`{11, "Thomas", "Cormen"},`
+			`{22, "Charles", "Leiserson"},`
+			`{44, "Clifford", "Stein"},`
+		`},`
+		`Publisher{"MIT Press", "special_sales@mitpress.mit.edu"},`
+	`}`
+	`fmt.Println(b1)`
+
+	`fmt.Printf("%v\n", b1)`
+
+	`fmt.Printf("%+v\n", b1)`
+
+	`fmt.Printf("%#v\n", b1)`
+
+	`fmt.Printf("ISBN: %s, Title: %s, Edition: %d, Price: %f, b1.isbn, b1.title, b1.`
+`}`
+
+#### How to use Structure Method in Go
+
+`type Product struct {`
+	`name	string`
+	`unitPrice float32`
+	`quantity int`
+`}`
+
+`func (p Product) totalPrice() float32 {`
+	`return p.unitPrice * float32(p.quantity)`
+`}`
+
+`//...`
+
+`p1 := Product{"T107", 56.78, 12}`
+`fmt.Printf("Name = %s, Total Price = %.2f", pl.name, pl.totalPrice())`
+
+#### What are the advantages of Go compared to other languages
+
+**Golang is easy to learn and perfect for beginners, and as a newer language, it offers better-optimized features and less time typing.**
+
+
